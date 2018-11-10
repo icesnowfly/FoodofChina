@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FoodofChina</string>
+    <string name="user">账户:</string>
+    <string name="password">密码:</string>
+    <string name="size1">18dp</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="login_toast">登录成功！</string>
+    <string name="register_toast">注册失败！</string>
+</resources>
