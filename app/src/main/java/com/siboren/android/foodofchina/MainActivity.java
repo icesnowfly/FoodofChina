@@ -23,15 +23,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         userapi=new UserAPI(MainActivity.this);
-        userapi.insert_initial();
-        Log.e("main_activity", "onCreate: insert" );
+        Log.d("main_activity", "onCreate: insert" );
         mLoginButton=(Button)findViewById(R.id.login_button);
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public  void onClick(View v){
                 Log.d("main_activity", "onCreate: check" );
                 int j=userapi.login(1511,"123456");
-                Log.d("main_activity", "onCreate: check finished" +j);
+                Log.d("main_activity", "onCreate: check finished " +j);
                 Intent i= new Intent(MainActivity.this,MapActivity.class);
                 startActivity(i);
             }
