@@ -29,7 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         //创建数据表
-        Log.e("Helper_", "onCreate: ");
+        Log.d("Helper_", "onCreate: ");
         String CREATE_TABLE_User="CREATE TABLE if not exists "+ User.TABLE+"("
                 +User.KEY_ID+" INT PRIMARY KEY,"
                 +User.KEY_name+" TEXT, "

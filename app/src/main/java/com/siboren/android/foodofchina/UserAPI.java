@@ -85,16 +85,15 @@ public class UserAPI {
         user_temp.gender=1;
         user_temp.level=1;
         insert(user_temp);
-
     }
     public int login(int ID,String password){
         User user_temp=new User();
         user_temp=getUserById(ID);
-        Log.e("api", "login: "+user_temp.ID+"\t"+user_temp.password );
+        Log.d("api", "login: "+user_temp.ID+"\t"+user_temp.password +"\t"+password);
         if (user_temp.ID==0){
             return 2;//用户不存在
         }
-        if(user_temp.password==password){
+        if(user_temp.password.equals(password)){
             return 1;//密码正确
         }
         else{
@@ -104,5 +103,6 @@ public class UserAPI {
     public void reset(){
         SQLiteDatabase db=dbHelper.getWritableDatabase();
         db.execSQL("DROP TABLE IF EXISTS "+ User.TABLE);
+        db.close();
     }
 }
