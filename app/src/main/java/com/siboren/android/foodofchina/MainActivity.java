@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,R.string.login_toast,Toast.LENGTH_SHORT).show();
                 Intent i= new Intent(MainActivity.this,MapActivity.class);
                 startActivity(i);
+                onDestroy();
             }
         }
         );
