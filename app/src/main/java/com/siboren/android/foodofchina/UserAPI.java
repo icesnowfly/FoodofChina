@@ -29,9 +29,9 @@ public class UserAPI {
         values.put(User.KEY_gender,User.gender);
         values.put(User.KEY_level,User.level);
         //
-        Log.e("api_", "insert: "+values );
+        Log.d("api_", "insert: "+values );
         long User_Id=db.insert("user",null,values);
-        Log.e("api_", "insert: "+User_Id );
+        Log.d("api_", "insert: "+User_Id );
         db.close();
         return (int)User_Id;
     }
