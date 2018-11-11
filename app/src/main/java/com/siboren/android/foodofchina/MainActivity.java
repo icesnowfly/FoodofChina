@@ -1,11 +1,12 @@
 package com.siboren.android.foodofchina;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,11 +30,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public  void onClick(View v){
                 Log.d("main_activity", "onCreate: check" );
-                int j=userapi.login(1511,"123456");
+                String jj=((EditText)findViewById(R.id.login_user)).getText().toString();
+                if (jj.length()==0)
+                {
+                    return;
+                }
+                int j=userapi.login(Integer.parseInt(jj),((EditText)findViewById(R.id.login_password)).getText().toString());
                 Log.d("main_activity", "onCreate: check finished " +j);
-                Intent i= new Intent(MainActivity.this,MapActivity.class);
-                startActivity(i);
-                onDestroy();
+                if (j==1)
+                {
+                    Intent i= new Intent(MainActivity.this,MapActivity.class);
+                    startActivity(i);
+                    onDestroy();
+                }else{
+                    if (j==0)
+                    {
+                        Toast.makeText(MainActivity.this,R.string.wrong_password,Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(MainActivity.this,R.string.null_username,Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         }
         );
@@ -42,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
         mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public  void onClick(View v){
-                Toast.makeText(MainActivity.this,R.string.register_toast,Toast.LENGTH_SHORT).show();
+                Intent k= new Intent(MainActivity.this,RegActivity.class);
+                startActivity(k);
             }
         }
         );
-
     }
 }

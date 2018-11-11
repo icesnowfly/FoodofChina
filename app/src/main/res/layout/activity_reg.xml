@@ -31,9 +31,11 @@
                 android:layout_height="wrap_content"
                 android:text="@string/user" />
             <EditText
-                android:id="@+id/login_user"
+                android:id="@+id/reg_user"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:hint="@string/user_hint"
+                android:textSize="16dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -46,11 +48,31 @@
                 android:layout_height="wrap_content"
                 android:text="@string/password" />
             <EditText
-                android:id="@+id/login_password"
+                android:id="@+id/reg_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
-             </LinearLayout>
+                android:inputType="textPassword"
+                android:hint="@string/password_hint"
+                android:textSize="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/confirm" />
+            <EditText
+                android:id="@+id/reg_check_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/password_check_hint"
+                android:textSize="16dp"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -59,15 +81,15 @@
         android:layout_marginTop="48dp"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login"/>
-        <Button
-            android:id="@+id/register_button"
+            android:id="@+id/register_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"/>
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"/>
     </LinearLayout>
 
 </LinearLayout>
