@@ -17,4 +17,8 @@
     <string name="reg_success">注册成功！</string>
     <string name="password_dif">密码不一致！</string>
     <string name="same_username">用户名已存在！</string>
+    <string name="mission">任务</string>
+    <string name="compound">合成</string>
+    <string name="materials">食材</string>
+    <string name="friends">好友</string>
 </resources>
